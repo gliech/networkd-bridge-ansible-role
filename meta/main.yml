@@ -2,6 +2,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: networkd_bridge
   author: gliech
   description: Create a systemd-networkd bridge interface.
   license: BSD-4-Clause
