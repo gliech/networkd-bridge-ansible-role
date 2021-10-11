@@ -1,0 +1,14 @@
+---
+- hosts: guests
+  roles:
+    - role: "{{ role_name }}"
+
+  post_tasks:
+    - name: ip addr show
+      command: ip addr show
+      register: ip_addr_show
+      become: yes
+      changed_when: false
+    - name: return output
+      debug:
+        var: ip_addr_show.stdout_lines

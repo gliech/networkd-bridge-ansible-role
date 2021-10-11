@@ -1,0 +1,9 @@
+[Match]
+Name={{ networkd_bridge_name }}
+
+[Network]
+{% if networkd_bridge_ip_address %}
+Address={{ networkd_bridge_ip_address }}
+{% else %}
+DHCP=true
+{% endif %}

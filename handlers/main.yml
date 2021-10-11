@@ -1,0 +1,4 @@
+---
+- name: Reboot
+  reboot:
+  listen: reload_network

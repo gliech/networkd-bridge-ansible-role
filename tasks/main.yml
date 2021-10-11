@@ -1,0 +1,31 @@
+---
+- name: Gather service facts
+  ansible.builtin.service_facts:
+
+- name: Enable systemd-networkd
+  assert:
+    that: ansible_facts.services['systemd-networkd.service'].status == 'enabled'
+    fail_msg: systemd-networkd is not used
+    quiet: true
+
+- name: Ensure that the systemd-network directory exists
+  file:
+    path: /etc/systemd/network
+    mode: 0755
+    state: directory
+  become: yes
+
+- name: Place configuration files for the bridge
+  template:
+    src: "{{ item.src }}"
+    dest: "/etc/systemd/network/{{ item.dest }}"
+    mode: 0644
+  become: yes
+  notify: reload_network
+  loop:
+    - src: bridge.netdev
+      dest: "{{ networkd_bridge_name }}.netdev"
+    - src: bridge.network
+      dest: "{{ networkd_bridge_name }}.network"
+    - src: interface.network
+      dest: "{{ networkd_bridge_interface }}.network"

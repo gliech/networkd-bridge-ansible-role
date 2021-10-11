@@ -1,0 +1,4 @@
+---
+networkd_bridge_name: bridge01
+networkd_bridge_interface: eth0
+networkd_bridge_ip_address: false

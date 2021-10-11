@@ -1,0 +1,5 @@
+[Match]
+Name={{ networkd_bridge_interface }}
+
+[Network]
+Bridge={{ networkd_bridge_name }}
