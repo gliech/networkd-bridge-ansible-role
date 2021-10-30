@@ -21,7 +21,7 @@
     dest: "/etc/systemd/network/{{ item.dest }}"
     mode: 0644
   become: yes
-  notify: reload_network
+  register: networkd_bridge_config_files
   loop:
     - src: bridge.netdev
       dest: "{{ networkd_bridge_name }}.netdev"
@@ -29,3 +29,8 @@
       dest: "{{ networkd_bridge_name }}.network"
     - src: interface.network
       dest: "{{ networkd_bridge_interface }}.network"
+
+- name: Reboot
+  reboot:
+  when: networkd_bridge_config_files.changed
+  become: yes
