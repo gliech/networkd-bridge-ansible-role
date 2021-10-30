@@ -1,0 +1,10 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: Initialize package cache
+      pacman:
+        update_cache: yes
+        upgrade: yes
+      become: yes
+      when: ansible_os_family == 'Archlinux'
