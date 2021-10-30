@@ -30,7 +30,9 @@
     - src: interface.network
       dest: "{{ networkd_bridge_interface }}.network"
 
-- name: Reboot
+- name: Reboot  # noqa no-handler
   reboot:
   when: networkd_bridge_config_files.changed
   become: yes
+  tags:
+    - molecule-notest
