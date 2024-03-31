@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Import reflector"
-      import_role:
+    - name: "Import networkd_bridge"
+      ansible.builtin.import_role:
         name: "gliech.networkd_bridge"

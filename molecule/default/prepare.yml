@@ -3,8 +3,8 @@
   hosts: all
   tasks:
     - name: Initialize package cache
-      pacman:
+      ansible.builtin.package:
         update_cache: yes
         upgrade: yes
       become: yes
-      when: ansible_os_family == 'Archlinux'
+      when: ansible_pkg_mgr in ['apt', 'pacman']
