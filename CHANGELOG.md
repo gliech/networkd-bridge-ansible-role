@@ -1,3 +1,37 @@
+# [2.0.0](https://github.com/gliech/networkd-bridge-ansible-role/compare/v1.0.3...v2.0.0) (2024-03-31)
+
+
+### Documentation
+
+* readme ([e944284](https://github.com/gliech/networkd-bridge-ansible-role/commit/e9442847e025db447584e04aa62303e67d7cf08e))
+
+
+### Styles
+
+* ansible module fqdn ([75a0bf9](https://github.com/gliech/networkd-bridge-ansible-role/commit/75a0bf9c39f5864c86cfc9ab7d52a494537e2954))
+
+
+### Miscellaneous Chores
+
+* change license to GPL3 ([2221a3d](https://github.com/gliech/networkd-bridge-ansible-role/commit/2221a3db59e1be1c97b6cb94223709e7b00bc359))
+
+
+### Tests
+
+* **molecule:** general updated to default scenario ([f8d7d6a](https://github.com/gliech/networkd-bridge-ansible-role/commit/f8d7d6a48757d26194d09d462f1d39cc249ec72a))
+* **molecule:** remove broken option from container config ([cfe74a4](https://github.com/gliech/networkd-bridge-ansible-role/commit/cfe74a492fb0dd9212168f7030eb44678550989e))
+* remove vagrant configuration ([f132aba](https://github.com/gliech/networkd-bridge-ansible-role/commit/f132aba15e86b7f86a162c6ff41a6a0250c0f5cf))
+
+
+### Continuous Integration
+
+* switch to remote gh actions workflow ([ab67af9](https://github.com/gliech/networkd-bridge-ansible-role/commit/ab67af98208b21495efd8826123d799d30d8d9c1))
+
+
+### BREAKING CHANGES
+
+* change license to GPL3
+
 ## [1.0.3](https://github.com/gliech/networkd-bridge-ansible-role/compare/v1.0.2...v1.0.3) (2021-10-30)
 
 
