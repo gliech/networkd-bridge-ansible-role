@@ -1,4 +1,3 @@
 ---
 exclude_paths:
   - node_modules/
-  - vagrant/
