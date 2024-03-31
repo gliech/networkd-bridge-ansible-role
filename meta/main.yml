@@ -5,7 +5,7 @@ galaxy_info:
   role_name: networkd_bridge
   author: gliech
   description: Create a systemd-networkd bridge interface.
-  license: BSD-4-Clause
+  license: GPL-3.0-only
   min_ansible_version: 2.9
   platforms:
     - name: ArchLinux
