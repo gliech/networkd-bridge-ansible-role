@@ -1,4 +1,4 @@
-# ['networkd Bridge Ansible Role'][1]
+# [networkd Bridge Ansible Role][1]
 
 [![test & release][2]][3]
 
