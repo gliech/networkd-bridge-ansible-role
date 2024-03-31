@@ -3,20 +3,20 @@
   ansible.builtin.service_facts:
 
 - name: Enable systemd-networkd
-  assert:
+  ansible.builtin.assert:
     that: ansible_facts.services['systemd-networkd.service'].status == 'enabled'
     fail_msg: systemd-networkd is not used
     quiet: true
 
 - name: Ensure that the systemd-network directory exists
-  file:
+  ansible.builtin.file:
     path: /etc/systemd/network
     mode: 0755
     state: directory
   become: yes
 
 - name: Place configuration files for the bridge
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "/etc/systemd/network/{{ item.dest }}"
     mode: 0644
@@ -31,7 +31,7 @@
       dest: "{{ networkd_bridge_interface }}.network"
 
 - name: Reboot  # noqa no-handler
-  reboot:
+  ansible.builtin.reboot:
   when: networkd_bridge_config_files.changed
   become: yes
   tags:
