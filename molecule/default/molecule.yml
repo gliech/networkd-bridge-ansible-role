@@ -12,7 +12,6 @@ platforms:
     pre_build_image: true
     privileged: true
     override_command: false
-    restart_policy: always
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
 provisioner:
